@@ -45,19 +45,9 @@ def main():
     toml_file_path = '.streamlit/secrets.toml'
     toml_data = toml.load(toml_file_path)
 
-    # Create a dictionary with the required keys for gspread
-    gspread_creds = {
-        "type": toml_data["type"],
-        "project_id": toml_data["project_id"],
-        "private_key_id": toml_data["private_key_id"],
-        "private_key": toml_data["private_key"],
-        "client_email": toml_data["client_email"],
-        "client_id": toml_data["client_id"],
-        "auth_uri": toml_data["auth_uri"],
-        "token_uri": toml_data["token_uri"],
-        "auth_provider_x509_cert_url": toml_data["auth_provider_x509_cert_url"],
-        "client_x509_cert_url": toml_data["client_x509_cert_url"],
-    }
+    # Use the toml_file_path as the gspread credentials file path
+    gspread_creds = toml_file_path
+
 
     # Access the keys
     # google_maps_api = os.getenv("GOOGLE_MAPS_API")
