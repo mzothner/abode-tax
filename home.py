@@ -144,7 +144,8 @@ def main():
 
                     # use creds to create a client to interact with the Google Drive API
                     scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
-                    creds = ServiceAccountCredentials.from_json_keyfile_name(gspread_creds,scope)
+                    #creds = ServiceAccountCredentials.from_json_keyfile_name(gspread_creds,scope)
+                    creds = service_account.Credentials.from_dict(gspread_creds)
                     client = gspread.authorize(creds)
                     
                     # Accessing a worksheet by its title
