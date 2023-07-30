@@ -1,2 +1,2 @@
 .env
-credentials.toml
+.streamlit/secrets.toml

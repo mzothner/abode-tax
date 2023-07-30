@@ -42,7 +42,7 @@ def main():
     # ------ MAIN PAGE TABS ------
 
     # Read the TOML file
-    toml_file_path = 'credentials.toml'
+    toml_file_path = '.streamlit/secrets.toml'
     toml_data = toml.load(toml_file_path)
 
     # Create a dictionary with the required keys for gspread
