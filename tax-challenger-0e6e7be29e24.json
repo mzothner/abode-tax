@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "tax-challenger",
+  "private_key_id": "0e6e7be29e24701ad63d96b26ed543f24cd9540a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDN3x7kGPZVgRk6\nA+lj8+GvCb+I0TDzwfBFR69hJ/531iNDvMoK43uF2GJLeZ6H8ptj9Yb7Syj78sxE\noIM6SEFnTStQ/4A83yyyh3IjqjDFQ9+ZzMawLz17g11T3yA2JAjFzM4GhorqD8p7\nA1vabspU7SYSWn7+5q23HYkGOtwUiEhjRVsoMBGrWAzMYN9Y59h7z0aJZwZZWsqm\nQ2mtB2QE0zilUv+fUByiog5eL3eF+htAVISkOf2JS/dcXYWIsWK1K/jsrnpP6UAV\nxhuEX7Mf4dvbMtJQb3TtdlsXEysxZIwKogbTfllBi7IkWujS6mfJ0MnLr+7R5FnR\nboZRLDG/AgMBAAECggEADRQYmH433/sa/CmIp4+A9EEjrtbQGLXNKsmNpbFuinRk\nulMbAfgTpJwetBORpt20Hqe+OU0I2U11lpwcpuFooXeW9RO8mzr368Hyou6XH8d0\nRAc5tBjVyHi+8neuFy83QEGgV2yV4Wq6/t4AW6JGlLPM6fhfyv4imQuosc5spTOQ\nbf+mTe29X7fJTpp3uqNqWq4Ye53hoGyVzk9Ks0NN/bqaevrJ2oxcZgl5Xq4EbtNO\n6va6x/KParNPva7ujvCJj3zKFo7TEczp2tmaizrQ7YJj6uqpP0Pr0uRWuHfXPdsX\nqbr97w6aNhOH7jo5cj1Dnot24N7hC7EDtxVRlnIYWQKBgQDp7+b0TDxzvqNaeu1M\nUVg3cESny/+qADNgSruzjfwY+3ae3iZtlhO4B89grxAz0aI4lKLaDzQBwQ8XxtCc\nIyX33v4or5FKUtwL5Zd17zg1aV535W0H0O/eivKrXdPYw1GeOTjAY9VJnruyJcE9\neuc7WAQvX8Rz1GxRWe6QmIjizQKBgQDhSZ0HABqeY24CF/Yno9fHoRPmoyNgb9em\nrxYqqzZbK0RDWerpSq7c2ert0bELy/h/AZPr9sTFdbNPNc8O40URlC47qW/gBxZm\nKwahctWBW415DmTQZKRs+lTCAoG8HCavGUAsJzG+wwku/6kfd20TyYaEfI+ouhL4\nfHQmVgSeuwKBgQDTXe0g4hjkw2S5BcSOZhj8zjVaHtm7cj75S8zYaPtUXzBITpQO\nA8GBT50x0Dslds3JrZKOz5m/0/2dEAfAa4mMsjCV9juiGce0ABefeSsiJzgxwFuI\n6mEwg/7KkxYsDh4ahb0fJ5S41fDk/3Pf5sIyPk5Zt3+64D2WK1l/0DIuKQKBgGOL\ngWT8eMaPrKYkLFIrpUbCN+brItCT2rf+GU9VQ7lZDtqruo7Gvyk66QGYbCCISg7k\nhZX3/c46SbawUgOEDJrN3Pfj0FkvCIiwbkecVBbKe2KIJ6elMLouipEHRof18Gni\nQGbCEsr1pvMraHFM9deObm/QEjI9tfAyHahqzbPNAoGBAK5PR9/DHoSR1YrzcGTd\n5FYko1/tntq65/U+Noo98LUP+xZ3d0uubmygcXJHcH3pBguqkvZxgwF5fIH2B/3z\n6bD7utJhueqID6bM1n/Hi8SDEIJc4sG8+NXOBZGA/LhCvAYBnrgpMbNAIBwmz0Mh\nVcWqopQbSTF/nv7LOTMmBQgJ\n-----END PRIVATE KEY-----\n",
+  "client_email": "prufrock-abode@tax-challenger.iam.gserviceaccount.com",
+  "client_id": "113197163273010093421",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/prufrock-abode%40tax-challenger.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -1,0 +1,10 @@
+streamlit
+requests
+python-dotenv
+streamlit-searchbox
+google-auth
+google-auth-oauthlib
+gspread
+oauth2client
+folium
+webbrowser

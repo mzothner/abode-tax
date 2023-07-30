@@ -1,6 +1,7 @@
+import streamlit as st
 import os
 from datetime import datetime
-import streamlit as st
+from typing import List
 import requests
 from dotenv import load_dotenv
 import webbrowser
@@ -8,7 +9,8 @@ from streamlit_searchbox import st_searchbox
 from google.oauth2 import service_account
 from oauth2client.service_account import ServiceAccountCredentials
 import gspread
-from typing import List
+import toml
+import folium
 
 
 def main():
@@ -39,12 +41,31 @@ def main():
     
     # ------ MAIN PAGE TABS ------
 
-    # Load environment variables from .env file
-    load_dotenv()
+    # Read the TOML file
+    toml_file_path = 'credentials.toml'
+    toml_data = toml.load(toml_file_path)
+
+    # Create a dictionary with the required keys for gspread
+    gspread_creds = {
+        "type": toml_data["type"],
+        "project_id": toml_data["project_id"],
+        "private_key_id": toml_data["private_key_id"],
+        "private_key": toml_data["private_key"],
+        "client_email": toml_data["client_email"],
+        "client_id": toml_data["client_id"],
+        "auth_uri": toml_data["auth_uri"],
+        "token_uri": toml_data["token_uri"],
+        "auth_provider_x509_cert_url": toml_data["auth_provider_x509_cert_url"],
+        "client_x509_cert_url": toml_data["client_x509_cert_url"],
+    }
 
     # Access the keys
-    google_maps_api = os.getenv("GOOGLE_MAPS_API")
-    attom_api_key = os.getenv("ATTOM_API")
+    # google_maps_api = os.getenv("GOOGLE_MAPS_API")
+    # attom_api_key = os.getenv("ATTOM_API")
+
+    google_maps_api = st.secrets["GOOGLE_MAPS_API"]
+    attom_api_key = st.secrets["ATTOM_API"]
+
 
     def get_place_autocomplete(address):
         endpoint = f"https://maps.googleapis.com/maps/api/place/autocomplete/json"
@@ -133,7 +154,7 @@ def main():
 
                     # use creds to create a client to interact with the Google Drive API
                     scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
-                    creds = ServiceAccountCredentials.from_json_keyfile_name('/Users/mattzothner/Documents/Programming/homebot/tax-challenger-0e6e7be29e24.json',scope)
+                    creds = ServiceAccountCredentials.from_json_keyfile_name(gspread_creds,scope)
                     client = gspread.authorize(creds)
                     
                     # Accessing a worksheet by its title
