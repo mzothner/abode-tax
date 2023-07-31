@@ -21,7 +21,7 @@ def main():
         # JavaScript to open the URL in a new tab
         new_tab_action = f"window.open('{url}', '_blank')"
         # Create a button with the desired URL
-        st.button("Join the Waitlist", on_click=new_tab_action)
+        st.sidebar.button("Join the Waitlist", on_click=new_tab_action)
 
     st.sidebar.image("images/abode logo.png", width=150)
     st.sidebar.write("Abode simplifies homeownership for millions of Americans with personalized home insights and a smart assistant that helps you on your home journey.")
