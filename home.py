@@ -48,6 +48,8 @@ def main():
     # Use the toml_file_path as the gspread credentials file path
     gspread_creds = toml_file_path
 
+    # 
+
 
     # Access the keys
     # google_maps_api = os.getenv("GOOGLE_MAPS_API")
@@ -143,13 +145,32 @@ def main():
                     # GOOGLE SHEET API
 
                     # use creds to create a client to interact with the Google Drive API
-                    scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
-                    #creds = ServiceAccountCredentials.from_json_keyfile_name(gspread_creds,scope)
-                    creds = service_account.Credentials.from_dict(gspread_creds)
+                    scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets']
+
+                    # "https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"
+                    
+                    # Reconstruct the service account info from the secrets
+                    gcp_service_account = {
+                        "type": st.secrets["type"],
+                        "project_id": st.secrets["project_id"],
+                        "private_key_id": st.secrets["private_key_id"],
+                        "private_key": st.secrets["private_key"],
+                        "client_email": st.secrets["client_email"],
+                        "client_id": st.secrets["client_id"],
+                        "auth_uri": st.secrets["auth_uri"],
+                        "token_uri": st.secrets["token_uri"],
+                        "auth_provider_x509_cert_url": st.secrets["auth_provider_x509_cert_url"],
+                        "client_x509_cert_url": st.secrets["client_x509_cert_url"]
+                    }
+
+                    creds = service_account.Credentials.from_service_account_info(gcp_service_account, scope)
+                   
+                    # Authorize the client
                     client = gspread.authorize(creds)
                     
                     # Accessing a worksheet by its title
-                    worksheet = client.open("Abode Growth").worksheet("Eng_Mkt_Tools")
+                    sheet_url = st.secrets["private_gsheets_url"]
+                    worksheet = client.open(sheet_url).worksheet("Eng_Mkt_Tools")
 
                     # Adding submissions to marketing analytics document to measure later
                     data_to_append = [address, avm_value, assdttlvalue, submission_datetime]
