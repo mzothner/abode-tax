@@ -19,14 +19,13 @@ def main():
     # ----- SIDEBAR -----
     def open_webpage(url):
         webbrowser.open_new_tab(url)
-
     
     st.sidebar.image("images/abode logo.png", width=150)
     st.sidebar.write("Abode simplifies homeownership for millions of Americans with personalized home insights and a smart assistant that helps you on your home journey.") 
     st.sidebar.markdown(" ")
-    st.sidebar.button("Join the Waitlist",on_click="https://joinabode.ai?utm_source=tax_tool_sidebar")
-        #webpage_url = "https://joinabode.ai?utm_source=tax_tool_sidebar"  # Replace this with your desired URL
-        #open_webpage(webpage_url)
+    if st.sidebar.button("Join the Waitlist"):
+        webpage_url = "https://joinabode.ai?utm_source=tax_tool_sidebar"
+        open_webpage(webpage_url)
     st.sidebar.markdown(" ")    
     st.sidebar.image("images/abode mvp.png", width=200)
 
