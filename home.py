@@ -41,20 +41,6 @@ def main():
     
     # ------ MAIN PAGE TABS ------
 
-    # Read the TOML file
-    toml_file_path = '.streamlit/secrets.toml'
-    toml_data = toml.load(toml_file_path)
-
-    # Use the toml_file_path as the gspread credentials file path
-    gspread_creds = toml_file_path
-
-    # 
-
-
-    # Access the keys
-    # google_maps_api = os.getenv("GOOGLE_MAPS_API")
-    # attom_api_key = os.getenv("ATTOM_API")
-
     google_maps_api = st.secrets["GOOGLE_MAPS_API"]
     attom_api_key = st.secrets["ATTOM_API"]
 
