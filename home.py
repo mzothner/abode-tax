@@ -145,9 +145,7 @@ def main():
                     # GOOGLE SHEET API
 
                     # use creds to create a client to interact with the Google Drive API
-                    scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets']
-
-                    # "https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"
+                    scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets', "https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
                     
                     # Reconstruct the service account info from the secrets
                     gcp_service_account = {
@@ -163,7 +161,7 @@ def main():
                         "client_x509_cert_url": st.secrets["client_x509_cert_url"]
                     }
 
-                    creds = service_account.Credentials.from_service_account_info(gcp_service_account, scope)
+                    creds = service_account.Credentials.from_service_account_info(gcp_service_account,scopes=scope)
                    
                     # Authorize the client
                     client = gspread.authorize(creds)
