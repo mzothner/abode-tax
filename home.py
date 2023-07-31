@@ -17,19 +17,16 @@ def main():
     st.set_page_config(page_title="Abode Insights")
 
     # ----- SIDEBAR -----
-    def open_webpage_in_new_tab(url):
-        # JavaScript to open the URL in a new tab
-        new_tab_action = f"window.open('{url}', '_blank')"
-        # Create a button with the desired URL
-        st.sidebar.button("Join the Waitlist", on_click=new_tab_action)
 
     st.sidebar.image("images/abode logo.png", width=150)
     st.sidebar.write("Abode simplifies homeownership for millions of Americans with personalized home insights and a smart assistant that helps you on your home journey.")
     st.sidebar.markdown(" ")
 
-    # Call the open_webpage_in_new_tab function with the desired URL
-    webpage_url = "https://joinabode.ai?utm_source=tax_tool_sidebar"  # Replace this with your desired URL
-    open_webpage_in_new_tab(webpage_url)
+    waitlist_url_sidebar = "https://joinabode.ai?utm_source=tax_tool_sidebar"
+
+    # Using Markdown syntax to create a hyperlink
+    st.sidebar.subheader(f"[Join the waitlist]({waitlist_url_sidebar})")
+
     st.sidebar.markdown(" ")    
     st.sidebar.image("images/abode mvp.png", width=200)
 
