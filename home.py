@@ -187,7 +187,7 @@ def main():
                         st.write("Your property taxes are based on the assessed value of your home, so you want this number to be as low as possible. Based on your current market value, we think you have a good chance of lowering your assessed value.")
                     else:
                         st.info("You're not a good candidate to challenge your property taxes at this time. Your assessed value would need to be higher than your market value in order to challenge property taxes.")
-                        st.write("Don't fret. We can deliver more personalized home insights like this one. Sign up for the waitlist to get access to Abode when we launch.")
+                        st.write("Don't fret. We can deliver more personalized home insights like this one.")
 
                     st.markdown(" ")
                     with st.container():
@@ -211,7 +211,7 @@ def main():
                         with col2:
                             st.write(f"That's a difference of {difference_currency}")
                             st.write(f"Market value last calculated {last_avm_calculation}")
-                            st.write("This estimate is based on recent public data from your county. Specific values regarding your property will change this result.")
+                            st.write("This estimate is based on recent public data from your county. Sometimes your county's estimates may differ from other sources like Zillow, etc.")
 
                             # Get the latitude and longitude from the address
                             coords = get_coordinates_from_address(address)
